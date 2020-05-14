@@ -4,13 +4,16 @@
   font-size: 10px;
   font-family: "Andale Mono", sans-serif;
   text-align: center;
+  z-index: 1;
+  overflow: hidden;
 }
 
 body {
+  position: relative;
   background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  height: 100vh;
 }
 
 h1 {
@@ -18,7 +21,7 @@ h1 {
   font-weight: bold;
   width: auto;
   color: #f9f9f9;
-  margin: 30px auto 15px auto;
+  margin: 30px auto 10px auto;
   padding: 20px 50px;
   border-radius: 15px;
   box-shadow: 0px 5px 3px rgb(203, 203, 203);
@@ -30,23 +33,29 @@ h3 {
   line-height: 20px;
   color: #ffacb7;
   width: 440px;
-  margin: auto;
+  margin: 20px auto;
   word-wrap: break-word;
   text-align: justify;
 }
+
+/* TEXT-AREAS  */
 
 textarea,
 #sorted-text {
   font-size: 1.5rem;
   text-align: left;
   display: block;
-  margin: 30px auto 10px auto;
+  margin: 15px auto;
   width: 500px;
   resize: none;
+  border-radius: 5px;
+  outline: none;
+  color: #6886c5;
 }
 
 #sorted-text {
   visibility: hidden;
+  font-weight: bold;
 }
 
 button {
@@ -57,7 +66,80 @@ button {
   border-radius: 25px;
   color: #f9f9f9;
   background-color: #6886c5;
-  margin: auto;
+  margin: 20px auto;
   box-shadow: 0px 5px 3px rgba(198, 198, 198, 0.88);
   border: none;
+}
+
+/* FOOTER  */
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  margin: 0px auto;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+
+a {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #ffacb7;
+  text-align: right;
+  cursor: pointer;
+  margin: auto 10px;
+  text-decoration: none;
+}
+
+.fab {
+  color: #ffacb7;
+  font-size: 3rem;
+}
+
+/* BLOBS  */
+
+svg {
+  position: absolute;
+  max-width: 600px;
+  z-index: 0;
+}
+
+.yellow {
+  width: 375px;
+  left: 8%;
+  top: 3%;
+}
+.pink {
+  width: 400px;
+  right: 10%;
+  top: 5%;
+}
+.blue {
+  width: 300px;
+  left: 20%;
+  bottom: 5%;
+}
+.grey {
+  width: 350px;
+  right: 10%;
+  bottom: 6%;
+}
+
+@media only screen and (max-width: 800px) {
+  svg {
+    max-width: 300px;
+  }
+  .pink {
+    top: 15%;
+    right: 1%;
+  }
+  .blue {
+    bottom: 2%;
+    left: 2%;
+  }
+  .grey {
+    right: 2%;
+    bottom: 5%;
+  }
 }
