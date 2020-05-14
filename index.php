@@ -3,18 +3,33 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-echo 'Hello';
+$returned = "";
 
-$names = ["first"=>"php", "a"=>"Arrays", "b"=>"are","c"=> "gay","d"=> "as","e"=> "heck"];
-echo "<br /> <br/> <br />";
-print_r($names);
-echo "<br/>";
-
-foreach ($names as $name){
-
-    if ($name == "php"){
-        echo "\n <h2>Big ol' sweaty dicks</h2>";
-        continue;
-    }
-    echo "<h3>${name}</h3>";
+if ($_SERVER["REQUEST_METHOD"] === "POST")
+{
+    $returned = $_POST["user-text"];
 }
+
+
+
+?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>SubString-Sorter</title>
+        <link rel="stylesheet" href="css/styles.css"
+    </head>
+    <body>
+        <h1>sub-string sorter</h1>
+        <br />
+        <h3>Enter a body of text in the textarea below and click submit.
+            A new textarea will show a copy of the string with each substring sorted alphabetically.</h3>
+        <form method="post">
+        <textarea autofocus required name="user-text" rows="10" maxlength="1000" placeholder="place some text to be sorted..."></textarea>
+        <button type="submit">SUBMIT</button>
+        <textarea id="sorted-text" name="sorted-text" rows="10"></textarea>
+        </form>
+        <p><?=$returned?></p>
+    </body>
+</html>
