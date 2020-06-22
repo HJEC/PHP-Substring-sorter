@@ -3,6 +3,8 @@
 <h1 align="center">PHP sub-string sorter</h1>
 <br>
 
+<h3> you can visit the live version of this project, hosted with Heroku at the link next to the repo description, or <a style="text-decoration: underline"href="https://hjec-php-sorter.herokuapp.com/">here</a> 📁.
+
 <p align="center"><img src="/stuff/sorter.gif"/></p>
 
 #### Author: [Henry Crookes](http:/github.com/hjec) :cowboy_hat_face:
