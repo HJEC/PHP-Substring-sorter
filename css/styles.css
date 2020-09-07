@@ -93,12 +93,16 @@ a {
   color: #ffacb7;
   font-size: 3rem;
 }
+.fab:hover {
+  color: #ffe0ac;
+}
 
 /* BLOBS  */
 
 svg {
-  position: absolute;
-  max-width: 600px;
+  position: fixed;
+  max-width: 400px;
+  min-width: 100px;
   z-index: 0;
 }
 
@@ -124,6 +128,13 @@ svg {
 }
 
 @media only screen and (max-width: 800px) {
+  * {
+    font-size: 5px;
+  }
+  textarea,
+  #sorted-text {
+    width: 300px;
+  }
   svg {
     max-width: 300px;
   }
@@ -138,5 +149,10 @@ svg {
   .grey {
     right: 2%;
     bottom: 5%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  svg {
+    max-width: 100px;
   }
 }
