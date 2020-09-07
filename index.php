@@ -5,13 +5,16 @@ $sorted_text = "";
 
 require "functions/sorter.php";
 
+
 if ($_SERVER["REQUEST_METHOD"] === "POST")
 {
+    // Formatting the user's input before sending through the sort function.
     $user_text = trim($_POST["user-text"]);
     if (strlen($user_text) > 0 && $user_text != " "){
 
     $sorted_text = sort_string($_POST["user-text"]);
     ?>
+    <!-- Once a user has submitted some text, render the second text field as visible. -->
     <style type="text/css">
     #sorted-text {
         visibility: visible!important;
